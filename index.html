@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Web3 Telegram DApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 480px;
+      margin: auto;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f3f3f3;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+    .reward-box {
+      background: #d2f4ff;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .task {
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://telegram.org/img/t_logo.png" class="logo" alt="Logo">
+
+    <h2>🎁 Daily Blind Box</h2>
+    <div class="reward-box">
+      <strong>Rewards:</strong> <span id="reward">300L</span><br>
+      <button onclick="claimReward()">🎉 FreeClaim</button>
+    </div>
+
+    <div class="task">
+      <p>✅ Follow Twitter +150L</p>
+      <button onclick="window.open('https://twitter.com', '_blank')">Follow</button>
+    </div>
+
+    <div class="task">
+      <p>✅ Join Telegram +100L</p>
+      <button onclick="window.open('https://t.me/your_channel', '_blank')">Join</button>
+    </div>
+
+    <div class="task">
+      <p>👥 Invite Friend +300L</p>
+      <button onclick="share()">Invite</button>
+    </div>
+
+    <div class="task">
+      <p>💳 Connect TON Wallet</p>
+      <button onclick="connectWallet()">Connect</button>
+    </div>
+  </div>
+
+  <script>
+    Telegram.WebApp.ready();
+
+    function claimReward() {
+      alert("🎉 Вы получили 300 токенов!");
+    }
+
+    function share() {
+      Telegram.WebApp.shareText("Присоединяйся к мини-аппу и получи награды: https://t.me/your_bot");
+    }
+
+    function connectWallet() {
+      alert("TON Wallet подключен! (заглушка)");
+    }
+  </script>
+</body>
+</html>
